@@ -1,0 +1,18 @@
+.slide-box{
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000000;
+}
+
+.slide{
+    top: 0;
+    
+    position: absolute;
+    float: left;
+    margin: auto;
+    background: khaki;
+    width: 300px;
+    height: 300px;
+}
