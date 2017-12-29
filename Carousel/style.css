@@ -1,18 +1,132 @@
-.slide-box{
-    position: relative;
-    margin: auto;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #000000;
-}
-
-.slide{
-    top: 0;
-    
-    position: absolute;
-    float: left;
-    margin: auto;
-    background: khaki;
-    width: 300px;
-    height: 300px;
-}
+   @import url('font/font.css');
+   /* Clearfix */
+   
+   .clearfix::after {
+       content: "";
+       clear: both;
+       display: block;
+   }
+   /* Grid System */
+   
+   .col-1 {
+       width: 120px;
+   }
+   
+   .col-2 {
+       width: 240px;
+   }
+   
+   .col-3 {
+       width: 360px;
+   }
+   
+   .col-4 {
+       width: 480px;
+   }
+   
+   .col-5 {
+       width: 600px;
+   }
+   
+   .col-6 {
+       width: 720px;
+   }
+   
+   .col-7 {
+       width: 840px;
+   }
+   
+   .col-8 {
+       width: 960px;
+   }
+   
+   .col-9 {
+       width: 1080px;
+   }
+   
+   .col-10 {
+       width: 1200px;
+   }
+   
+   .container {
+       background: chartreuse;
+       position: relative;
+   }
+   
+   .slide-box {
+       position: relative;
+       height: 300px;
+       border: 1px solid limegreen;
+       display: flex;
+       margin: auto;
+   }
+   
+   .previous::before {
+       font-family: 'fontello';
+       content: '\e801';
+       width: 5%;
+       height: 5%;
+       cursor: pointer;
+       left: 1%;
+       top: 45%;
+       position: absolute;
+       z-index: 3;
+   }
+   
+   .next::before {
+       font-family: 'fontello';
+       content: '\e800';
+       width: 5%;
+       height: 5%;
+       cursor: pointer;
+       right: 0;
+       top: 45%;
+       position: absolute;
+       z-index: 2;
+   }
+   
+   .slide-box>div {
+       position: absolute;
+       background: transparent;
+       height: 300px;
+       border: 1px solid black;
+   }
+   
+   .slidein {
+       animation-duration: 1s;
+       animation-name: slidein;
+   }
+   
+   @keyframes slidein {
+       from {
+           visibility: hidden;
+           margin-left: 100%;
+       }
+       to {
+           visibility: visible;
+           margin-left: 0%;
+       }
+   }
+   
+   .slideout {
+       animation-duration: 1s;
+       animation-name: slideout;
+   }
+   
+   @keyframes slideout {
+       from {
+           margin-right: 100%;
+       }
+       to {
+           margin-right: 0;
+       }
+   }
+   
+   .slide-2,
+   .slide-3 {
+       visibility: hidden;
+   }
+   
+   .show {
+       visibility: visible;
+   }
