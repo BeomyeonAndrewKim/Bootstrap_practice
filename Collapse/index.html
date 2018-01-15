@@ -12,14 +12,12 @@
   }
   .collapse1__paragraph{
     border: 1px solid black;
-    /* display: none; */
+    display: none;
   }
-
   .show{
     display: block;
     animation: slidedown 0.3s;
   }
-  
   .hide{
     display: none;
   }
@@ -28,18 +26,18 @@
   }
   @keyframes slidedown{
     from{
-      height: 0;
+      max-height: 0;
     }
     to{
-      height: 171px;
+      max-height: 1000px;
     }
   }
   @keyframes slideup{
     from{
-      height: 171px;
+      max-height: 1000px;
     }
     to{
-      height: 0;
+      max-height: 0;
     }
   }
   </style>
