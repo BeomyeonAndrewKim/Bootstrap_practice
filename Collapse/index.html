@@ -16,13 +16,13 @@
   }
   .show{
     display: block;
-    animation: slidedown 0.3s;
+    animation: slidedown 0.5s;
   }
   .hide{
     display: none;
   }
   .hideanimation{
-    animation: slideup 0.3s;
+    animation: slideup 0.5s;
   }
   @keyframes slidedown{
     from{
@@ -55,22 +55,26 @@
   <div class="collapse2"></div>
   <div class="collapse3"></div>
   <script>
+    let collapseLink=document.querySelector('.collapse1__link');
+    let collapseBtn=document.querySelector('.collapse1__btn');
+    let collapsePara=document.querySelector('.collapse1__paragraph');
+
     function hide(){
-      document.querySelector('.collapse1__paragraph').classList.add('hideanimation')
+      collapsePara.classList.add('hideanimation')
       setTimeout(()=>{
-        document.querySelector('.collapse1__paragraph').classList.replace('show','hide');
-        document.querySelector('.collapse1__paragraph').classList.remove('hideanimation')
-      },200);
+        collapsePara.classList.replace('show','hide');
+        collapsePara.classList.remove('hideanimation')
+      },400);
     }
-  document.querySelector('.collapse1__link').addEventListener('click',e=>{
-    document.querySelector('.collapse1__paragraph').classList.contains('show')?
+  collapseLink.addEventListener('click',e=>{
+    collapsePara.classList.contains('show')?
     hide():
-    document.querySelector('.collapse1__paragraph').classList.replace('hide','show');
+    collapsePara.classList.replace('hide','show');
   })
-  document.querySelector('.collapse1__btn').addEventListener('click',e=>{
-    document.querySelector('.collapse1__paragraph').classList.contains('show')?
+  collapseBtn.addEventListener('click',e=>{
+    collapsePara.classList.contains('show')?
     hide():
-    document.querySelector('.collapse1__paragraph').classList.replace('hide','show');
+    collapsePara.classList.replace('hide','show');
   })
   </script>
 </body>
