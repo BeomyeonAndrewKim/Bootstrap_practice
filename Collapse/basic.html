@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Collapse</title>
+  <style>
+  .collapse1{
+      border: 1px solid black;
+      overflow: hidden;
+  }
+  .collapse1__paragraph{
+    border: 1px solid black;
+    display: none;
+  }
+  .show{
+    display: block;
+    animation: slidedown 0.5s;
+  }
+  .hide{
+    display: none;
+  }
+  .hideanimation{
+    animation: slideup 0.5s;
+  }
+  @keyframes slidedown{
+    from{
+      max-height: 0;
+    }
+    to{
+      max-height: 1000px;
+    }
+  }
+  @keyframes slideup{
+    from{
+      max-height: 1000px;
+    }
+    to{
+      max-height: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="collapse1">
+    <a class="collapse1__link" href="#">Button1</a>
+    <button class="collapse1__btn">Button2</button>
+    <p class="collapse1__paragraph hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi delectus cupiditate error doloremque voluptatibus ipsa. Velit veniam maxime laboriosam ab rerum perspiciatis alias omnis assumenda aut, et quibusdam id odit.
+    Nostrum vitae dolor inventore laudantium eum autem possimus, optio quia quidem sit labore earum iste incidunt voluptatibus quam sequi dicta alias veniam maxime obcaecati quo error corporis fuga! Necessitatibus, nostrum.
+    Porro, voluptatum magnam culpa doloremque consequatur fuga at vitae adipisci soluta eius eos, id, quas temporibus doloribus et libero voluptas rerum repellendus! Laboriosam neque voluptatibus alias est commodi praesentium sapiente.
+    Error tenetur perspiciatis quos enim facere impedit illo. Molestias beatae sunt iusto cum delectus eveniet reprehenderit corporis nostrum, animi consequuntur, veritatis voluptates! Aperiam cumque dicta natus vel maxime velit quam?
+    Quia, distinctio eligendi. Sit molestiae ipsum eum dolore necessitatibus, tempora eligendi unde, accusamus dolorem quae itaque ad error quo perspiciatis? Eos vitae mollitia minima consequatur in. Corporis harum consequuntur aliquid?</p>
+  </div>
+  <div class="collapse2"></div>
+  <div class="collapse3"></div>
+  <script>
+    let collapseLink=document.querySelector('.collapse1__link');
+    let collapseBtn=document.querySelector('.collapse1__btn');
+    let collapsePara=document.querySelector('.collapse1__paragraph');
+
+    function hide(){
+      collapsePara.classList.add('hideanimation')
+      setTimeout(()=>{
+        collapsePara.classList.replace('show','hide');
+        collapsePara.classList.remove('hideanimation')
+      },400);
+    }
+  collapseLink.addEventListener('click',e=>{
+    collapsePara.classList.contains('show')?
+    hide():
+    collapsePara.classList.replace('hide','show');
+  })
+  collapseBtn.addEventListener('click',e=>{
+    collapsePara.classList.contains('show')?
+    hide():
+    collapsePara.classList.replace('hide','show');
+  })
+  </script>
+</body>
+</html>
